@@ -28,6 +28,7 @@ const CardProfile = () => {
                 <a
                   href={dataProfile.html_url}
                   target="_blank"
+                  rel="noreferrer"
                   className="text-[#570DF8] hover:underline"
                 >
                   @{dataProfile.login}

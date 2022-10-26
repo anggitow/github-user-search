@@ -6,6 +6,7 @@ const ItemRepo = ({ ...prop }) => {
       <a
         href={prop.html_url}
         target="_blank"
+        rel="noreferrer"
         className="text-xl font-bold text-[#570DF8] hover:underline"
       >
         {prop.name}
