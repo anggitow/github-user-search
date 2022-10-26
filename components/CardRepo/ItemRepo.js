@@ -1,3 +1,5 @@
+import moment from "moment/moment";
+
 const ItemRepo = ({ ...prop }) => {
   return (
     <div className="py-4 first:pt-0">
@@ -17,7 +19,7 @@ const ItemRepo = ({ ...prop }) => {
         <div className="flex">
           <img src="/fork.png" className="h-4 w-4" /> {prop.forks_count}
         </div>
-        <span>Updated {prop.updated_at}</span>
+        <span>Updated {moment(prop.pushed_at).fromNow()}</span>
       </div>
     </div>
   );

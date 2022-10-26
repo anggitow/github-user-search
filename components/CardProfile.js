@@ -1,4 +1,5 @@
 import { useDataProfileStore } from "@store/storeDataProfile";
+import moment from "moment";
 
 const CardProfile = () => {
   const { dataProfile } = useDataProfileStore();
@@ -26,7 +27,7 @@ const CardProfile = () => {
                   @{dataProfile.login}
                 </a>
                 <span className="text-gray-500">
-                  Joined {dataProfile.created_at}
+                  Joined {moment(dataProfile.created_at).format("D MMMM YYYY")}
                 </span>
               </div>
             </div>
