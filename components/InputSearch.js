@@ -1,5 +1,6 @@
 import { useDataProfileStore } from "@store/storeDataProfile";
 import { useDataRepositoriesStore } from "@store/storeDataRepositories";
+import { useLoadingStore } from "@store/storeLoading";
 import { useUsernameStore } from "@store/storeUsername";
 import { useEffect } from "react";
 
@@ -7,6 +8,7 @@ const InputSearch = () => {
   const { username, setUsername } = useUsernameStore();
   const { setDataProfile } = useDataProfileStore();
   const { setDataRepositories } = useDataRepositoriesStore();
+  const { setLoading } = useLoadingStore();
 
   const fetchData = async () => {
     const responseDataProfile = await fetch(
@@ -20,6 +22,7 @@ const InputSearch = () => {
     );
     const dataRepositories = await responseDataRepositories.json();
     setDataRepositories(dataRepositories);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -27,6 +30,7 @@ const InputSearch = () => {
   }, []);
 
   const handleClick = async () => {
+    setLoading(true);
     fetchData();
   };
 

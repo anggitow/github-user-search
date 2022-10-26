@@ -1,13 +1,19 @@
 import { useDataProfileStore } from "@store/storeDataProfile";
+import { useLoadingStore } from "@store/storeLoading";
 import moment from "moment";
 
 const CardProfile = () => {
   const { dataProfile } = useDataProfileStore();
+  const { loading } = useLoadingStore();
 
   return (
     <div className="card bg-base-100 shadow-xl">
       <div className="card-body p-6 md:px-10">
-        {dataProfile?.id ? (
+        {loading ? (
+          <div className="flex justify-center">
+            <progress className="progress my-4 w-8/12"></progress>
+          </div>
+        ) : dataProfile?.id ? (
           <>
             <div className="flex justify-around sm:justify-start sm:gap-10">
               <div className="avatar items-center justify-center">
