@@ -9,6 +9,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <p className="font-space-mono">Test</p>
+      <button className="btn-primary btn">Button</button>
     </>
   );
 }
