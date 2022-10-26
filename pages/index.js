@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>GitHub User Search</title>
         <meta name="description" content="GitHub User Search" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
       </Head>
       <div className="container mx-auto px-5 py-10 md:py-14 md:px-12">
         <p className="mb-6 text-xl font-bold">GitHub User Search</p>

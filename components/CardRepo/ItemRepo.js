@@ -1,23 +1,23 @@
-const ItemRepo = () => {
+const ItemRepo = ({ ...prop }) => {
   return (
     <div className="py-4 first:pt-0">
       <a
-        href="https://github.com/anggitow/advice-generator-app"
+        href={prop.html_url}
         target="_blank"
         className="text-xl font-bold text-[#570DF8] hover:underline"
       >
-        crud-backend-laravel
+        {prop.name}
       </a>
-      <p className="text-sm">CRUD Backend using Laravel</p>
+      <p className="text-sm">{prop.description}</p>
       <div className="mt-4 flex items-center gap-4 text-sm">
-        <span>PHP</span>
+        <span>{prop.language}</span>
         <div className="flex">
-          <img src="/star.png" className="h-4 w-4" /> 5
+          <img src="/star.png" className="h-4 w-4" /> {prop.stargazers_count}
         </div>
         <div className="flex">
-          <img src="/fork.png" className="h-4 w-4" /> 10
+          <img src="/fork.png" className="h-4 w-4" /> {prop.forks_count}
         </div>
-        <span>Updated 2 hours ago</span>
+        <span>Updated {prop.updated_at}</span>
       </div>
     </div>
   );
